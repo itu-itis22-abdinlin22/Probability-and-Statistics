@@ -1,0 +1,376 @@
+%%% Template originaly created by Karol Kozioł (mail@karol-koziol.net) and modified for ShareLaTeX use
+
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+\usepackage[defaultmono]{droidmono}
+
+\usepackage{amsmath,amssymb,amsthm,textcomp}
+\usepackage{enumerate}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{minted}
+\usepackage{geometry}
+\geometry{left=25mm,right=25mm,%
+bindingoffset=0mm, top=20mm,bottom=20mm}
+
+
+\linespread{1.3}
+
+\newcommand{\linia}{\rule{\linewidth}{0.5pt}}
+
+% custom theorems if needed
+\newtheoremstyle{mytheor}
+    {1ex}{1ex}{\normalfont}{0pt}{\scshape}{.}{1ex}
+    {{\thmname{#1 }}{\thmnumber{#2}}{\thmnote{ (#3)}}}
+
+\theoremstyle{mytheor}
+\newtheorem{defi}{Definition}
+
+% my own titles
+\makeatletter
+\renewcommand{\maketitle}{
+\begin{center}
+\vspace{2ex}
+{\huge \textsc{\@title}}
+\vspace{1ex}
+\\
+\linia\\
+\@author \hfill \@date
+\vspace{4ex}
+\end{center}
+}
+\makeatother
+%%%
+
+% custom footers and headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{Homework \textnumero{} I}
+\cfoot{}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%
+
+% code listing settings
+\usepackage{listings}
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    aboveskip={1.0\baselineskip},
+    belowskip={1.0\baselineskip},
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=4,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=lines,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    numbers=left,
+    numberstyle=\small,
+    stepnumber=1,
+    numbersep=10pt,
+    captionpos=t,
+    escapeinside={\%*}{*)}
+}
+
+%%%----------%%%----------%%%----------%%%----------%%%
+
+\begin{document}
+
+\title{YZV231E - Prob.& Stat. for Data Science}
+
+\author{Nazrin Abdinli, 150220925}
+
+\date{12/11/2023}
+
+\maketitle
+
+\section*{Problem 1}
+
+
+\inputminted[breaklines]{python}{script_Q1_part1.py}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{YZV_231E_HW1_Q1_Part1.jpeg}
+    \caption{PMF of S for Players}
+    \label{fig:PMF_S_Players}
+\end{figure}
+
+\newpage
+\inputminted[breaklines]{python}{script_Q1_part2.py}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{YZV_231E_HW1_Q1_Part2.png}
+    \caption{Probabilities of actions selecting rock, paper, scissors}
+    \label{fig:Prob_action_rps}
+\end{figure}
+
+
+\newpage
+\inputminted[breaklines]{python}{script_Q1_part3.py}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{YZV_231E_HW1_Q1_Part3.png}
+    \caption{Ali, Bob, Carol's winning and draw probabilities}
+    \label{fig:Prob_win_AliBobCarol}
+\end{figure}
+
+\newpage
+\section*{Problem 2}
+\inputminted[breaklines]{python}{script_Q2_part0.py}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{YZV_231E_HW1_Q2_Part0.jpeg}
+    \caption{Probability of Students Present in Each Week}
+    \label{fig:ProbStudEachWeek}
+\end{figure}
+
+\newpage
+\inputminted[breaklines]{python}{script_Q2_part1.py}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{YZV_231E_HW1_Q2_Part1_plt1.jpeg}
+    \label{fig:PMF_Stud_present}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{YZV_231E_HW1_Q2_Part1_plt2.jpeg}
+    \label{fig:CDF_Stud_present}
+\end{figure}
+
+\newpage
+\inputminted[breaklines]{python}{script_Q2_part2.py}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{YZV_231E_HW1_Q2_Part2.jpeg}
+    \label{fig:Prob_atleast_60_Stud}
+\end{figure}
+
+\newpage
+\inputminted[breaklines]{python}{script_Q2_part3.py}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{YZV_231E_HW1_Q2_Part3.jpeg}
+    \label{fig:CondProb_30_Stud}
+\end{figure}
+
+
+
+
+\section{Problem 1 Handwriting}
+
+\subsection{Subsection A}
+if Ali wins:
+
+\begin{align*}
+& B B B \rightarrow \frac{3 !}{3 !}=1 \\
+& B B B W \rightarrow \frac{4 !}{3 ! \cdot 1 !}=4 \\
+& B B B W W \rightarrow \frac{5 !}{3 ! \cdot 2 !}=\frac{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5}{2 \cdot 3 \cdot 2}=10\\
+\end{align*}
+if Ahmet wins:
+\begin{align*}
+W W W &\rightarrow \frac{3!}{3!} = 1 \\
+W W W B &\rightarrow \frac{4!}{3! \cdot 1!} = 4 \\
+W W W B B &\rightarrow \frac{5!}{3! \cdot 2!} = \frac{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5}{2 \cdot 3 \cdot 2}=10\\
+\Omega= &\{B B B, B B B W, B B W B, B W B B, W B B B, \\
+& B B B W W, B B W W B, B W W B B, W W B B B, \\
+& W B W B B, W B B W B, W B B B W, B W B W B, \\
+& B W B B W, B B W B W \\
+& W W W, W W W B, W W B W, W B W W, B W W W, \\
+& W W W B B, W W B B W, W B B W W, B B W W W, \\
+& B W B W W, B W W B W, B W W W B, W B W B W, \\
+& W B W W B, W W B W B\} \\
+|\Omega|= & 30
+\end{align*}
+\subsection{Subsection B}
+
+
+\begin{align*}
+&\text{P(Ali)}\rightarrow\text{probability that Ali wins the game}\\
+& E_{A l i}: \text { Ali wins }=\{B B B, B B B W, B B W B, B W B B, W B B B \\
+& B B B W W, B B W W B, B W W B B, W W B B B, \\
+& W B W B B, W B B W B, W B B B W, B W B W B, \\
+&B W B B W, B B W B W\} \\
+& P(A l i)=\frac{\left|E_{A l i}\right|}{|\Omega|}=\frac{15}{30}=\frac{1}{2}
+\end{align*}
+
+\subsection{Subsection C}
+
+$P($ AliBlack $)=$ probability that Ali wins the game, given that the first car is black
+\begin{align*}
+& E_{\text {Aliblack }} \text { : Ali wins } \\
+& E_{\text {Aliblack }}=\{B B B, B B B W, B B W B, B W B B , \\
+& BBWWW, BBWWB, BWWBB, BWBWB, \\
+& B W B B W, B B W B W\} \\
+& P\left(E_{\text {Aliblack }}\right)=\frac{\left|E_{\text {Aliblack }}\right|}{|\Omega|}=\frac{10}{30}=\frac{1}{3} \\
+&
+\end{align*}
+\newpage
+\section{Problem 2 Handwriting}
+
+\subsection{Subsection A}
+$P($ first rode) : probability of choosing first road\\
+$P$ (no traffic | first road): probability of not getting stuck in tragic in first road
+
+\begin{align*}
+& P(\text { first road }) P(\text { no traffic } \mid \text { first road })= 0.5 \cdot 0.1=0.05
+\end{align*}
+
+\subsection{Subsection B}
+$P($ second rode) : probability of choosing second road\\
+$P$ (no traffic | second road): probability of not getting stuck in traffic in second road
+
+\begin{align*}
+& P(\text { second road }) P(\text { no traffic } \mid \text { second road })= 0.3 \cdot 0.08=0.024
+\end{align*}
+
+\subsection{Subsection C}
+$P($ third rode) : probability of choosing third road\\
+$P$ (no traffic | third road): probability of not getting stuck in traffic in third road
+
+\begin{align*}
+& P(\text { third road }) P(\text { no traffic } \mid \text { third road })= 0.2 \cdot 0.12=0.024
+\end{align*}
+\newpage
+\section{Problem 3 Handwriting}
+\subsection{Subsection A}
+
+$P(k$ errors $)=\left(\begin{array}{l}n \\ k\end{array}\right) \times p^k \times(1-p)^{n-k}$\\
+$n=64$ (number of bits)\\
+$p=0.008$ (probability of error for a single bit)\\
+$k$ : the number of errors\\
+the probabilities of having 0,1 , or 2 errors are:
+$$
+\begin{gathered}
+P(0 \text { error })=\left(\begin{array}{c}
+64 \\
+0
+\end{array}\right) \times 0.008^0 \times(1-0.008)^{64} \approx 0.2131 \\
+P(1 \text { error })=\left(\begin{array}{c}
+64 \\
+1
+\end{array}\right) \times 0.008^1 \times(1-0.008)^{63} \approx 0.3457 \\
+P(2 \text { errors })=\left(\begin{array}{c}
+64 \\
+2
+\end{array}\right) \times 0.008^2 \times(1-0.008)^{62} \approx 0.2571 \\
+P(\text { accepted })=P(0 \text { error })+P(1 \text { error })+P(\text { 2 errors }) \\
+\downarrow \\
+P(\text { accepted }) \approx 0.2131+0.3457+0.2571 \approx \textbf{0.8159}\\
+P(\text{accepted}) = P(\text{no retransmission})
+\end{gathered}
+$$
+
+\subsection{Subsection B}
+
+$(P(\text { no retransmission }))^5 \rightarrow$ the probability that
+5 blocks are transmitted without any retransmission
+$
+\\
+P(5 \text { blocks without retransmission })=(P(\text { no retransmission }))^5 \approx(0.8159)^5 \approx \textbf{0.3615}
+$
+\newpage
+\section{Problem 4 Handwriting}
+Choosing a prize from n prizes for each couple:
+$$
+\begin{aligned}
+& \frac{1^{\text {st }} \text { couple: }}{\left(\begin{array}{c}
+n \\
+1
+\end{array}\right) \quad \cdot } \quad \frac{2^{\text {nd }} \text { couple: }}{\left(\begin{array}{c}
+n-1 \\
+1
+\end{array}\right) \cdot } \frac{3^{\text {rd }} \text { couple: }}{\left(\begin{array}{c}
+n-2 \\
+1
+\end{array}\right) \quad \cdots } \cdots \frac{n^{\text {th }} \text { couple: }}{\left(\begin{array}{c}
+1 \\
+1
+\end{array}\right) } \\
+& \quad \quad \downarrow \quad\quad\quad\quad\quad\quad \downarrow \quad\quad\quad\quad\quad\downarrow  \quad\quad\quad\quad\quad\quad\quad\quad\downarrow \\
+& \frac{(n !)}{(n-1) ! 1 !} \cdot\quad\quad \frac{(n-1) !}{(n-2) ! 1 !} \cdot \frac{(n-2) !}{(n-3) ! \cdot 1 !} \cdots \quad\quad\quad\underbrace{\frac{1}{0 ! \cdot 1 !}}_1
+\end{aligned}
+$$
+$n ! \rightarrow$ choosing a prize from $n$ prizes for each couple: then, we should take into account that we have 2 person choices for each couple $\rightarrow$ we have $n$ couples so totally we have $2^n$ person choices.
+
+$$
+|E|=n ! \cdot 2^n
+$$
+$\Omega$ : our sampletpace is choosing $n$ people prom $2 n$ people
+$$
+|\Omega|=\left(\begin{array}{c}
+2 n \\
+n
+\end{array}\right)
+$$
+so, our probability is: $$P(E)=\frac{|E|}{|\Omega|}=\mathbf{\frac{n ! \cdot 2^n}{\left(\begin{array}{c}2 n \\ n\end{array}\right)}}$$
+
+\newpage
+\section{Problem 5 Handwriting}
+\subsection{Subsection A}
+
+$P(T=t)=\left(\begin{array}{l}t-1 \\ r-1\end{array}\right) \cdot p^r \cdot(1-p)^{t-r}$\\
+$t$ : the number of trials\\
+$r$ : the number of successes we want (5 toys for ages 3-8)\\
+$p$ is the probability of success (0.3)\\
+$1-p$ is the probability of failure (0.7)\\
+Given that $P(T=t)$ represents the probability of finding 5 toys suitable for ages 3-8 on the $t^{th}$ trial, we can calculate this PMF for $t>14$
+$$
+p_T(t)=\left(\begin{array}{c}
+t-1 \\
+5-1
+\end{array}\right) \times(0.3)^5 \times(1-0.3)^{t-5}
+$$
+\subsection{Subsection B}
+The conditional probability $P(T=t \mid T>14)$ is the probability of needing $t$ trials given that we haven't found the 5 toys even after 14 trials\\
+\begin{itemize}
+    \item $P(T=t \cap T>14)$ : the probability of requiring $t$ trials and it being greater than 14
+    \item $P(T>14)$ : the probability that the number of trials needed is more than 14
+\end{itemize}
+
+$$
+\begin{aligned}
+& P(T>14)=\sum_{t=15}^{\infty} P(T=t) \\
+& P(T>14)=1-\sum_{t=0}^{14} P(T=t) \\
+& P(T>14)=1-\sum_{t=0}^{14}\left(\begin{array}{l}
+t-1 \\
+5-1
+\end{array}\right) \times 0.3^5 \times(1-0.3)^{t-5}
+\end{aligned}
+$$
+\newpage
+\section{Problem 6 Handwriting}
+\subsection{Subsection A}
+$P(i \geqslant k)=\sum_{i=k}^N\left(\begin{array}{c}N \\ i\end{array}\right) \times p_1^i \times\left(1-p_1\right)^{N-i}$\\
+Above is the formula for calculating the probability of at least $k$ students present in the $1^{\text {st }}$ week
+
+\subsection{Subsection B}
+$P(n$ students in week $w)=\left(\begin{array}{c}N \\ n\end{array}\right) \times\left(p_w\right)^n \times\left(1-p_w\right)^{N-n}$\\
+$P($ current week $w)=\frac{1}{W_{\text {max }}}$\\
+$P$ (current ween $w \ln$ students $)$
+$=P(n$ students in week $w) \times \frac{1}{W_{\max }}$
+
+\end{document}
